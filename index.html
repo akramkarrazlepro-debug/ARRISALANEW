@@ -31,7 +31,7 @@
                     },
                     colors: {
                         brand: {
-                            orange: '#F97316', 
+                            orange: '#FF8C00', 
                             lightOrange: '#FFF7ED',
                             dark: '#1F2937',   
                             blue: '#2563EB',   
@@ -47,7 +47,7 @@
     </script>
     <style>
         .bg-pattern {
-            background-image: radial-gradient(#F97316 0.5px, transparent 0.5px), radial-gradient(#F97316 0.5px, #fff 0.5px);
+            background-image: radial-gradient(#FF8C00 0.5px, transparent 0.5px), radial-gradient(#FF8C00 0.5px, #fff 0.5px);
             background-size: 20px 20px;
             background-position: 0 0, 10px 10px;
             opacity: 0.1;
@@ -66,30 +66,15 @@
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white selection:bg-orange-100 selection:text-orange-600">
 
-    <!-- Top Bar -->
-    <div class="bg-brand-dark text-white py-2 text-sm">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-4 mb-2 md:mb-0 opacity-90">
-                <span><i class="fas fa-star text-yellow-400"></i> 4.7/5 - L'excellence pour tous</span>
-                <span class="hidden md:inline text-gray-500">|</span>
-                <span class="hidden md:inline">Fondé en 2006</span>
-            </div>
-            <div class="flex items-center space-x-6">
-                <a href="mailto:contact@arrisala.com" class="hover:text-brand-orange transition"><i class="fas fa-envelope mr-1"></i> contact@arrisala.com</a>
-                <a href="tel:+32484403358" class="hover:text-brand-orange transition"><i class="fas fa-phone mr-1"></i> +32 484 40 33 58</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation (Utilisation de la balise sémantique <nav>) -->
     <nav class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-orange-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" onclick="showHome()" class="flex items-center space-x-3 group cursor-pointer" title="Retour à l'accueil Institut ARRISALA">
                 <img src="assets/logo-arrisala.png" alt="Logo Institut ARRISALA - Livre et plume" class="h-12 w-auto object-contain" width="48" height="48">
-                <div>
-                    <span class="block text-xl font-bold text-gray-900 leading-none">ARRISALA</span>
-                    <span class="text-xs text-gray-500 font-medium tracking-widest uppercase">Institut Bruxelles</span>
+                <div class="leading-tight">
+                    <span class="block text-xs text-gray-500 font-medium tracking-widest uppercase">Institut</span>
+                    <span class="block text-2xl font-bold text-gray-900">ARRISALA</span>
                 </div>
             </a>
 
@@ -123,18 +108,18 @@
         <section id="accueil" class="relative bg-brand-lightOrange pt-16 md:pt-20 pb-32 overflow-hidden">
             <div class="absolute inset-0 bg-pattern"></div>
             
-            <div class="container mx-auto px-4 relative z-10">
-                <!-- Layout modifié : Colonne unique centrée (flex-col) au lieu de côte à côte -->
-                <div class="flex flex-col items-center gap-10 text-center">
+            <div class="container mx-auto px-4 relative z-10 w-full max-w-full">
+                <!-- Layout : texte et image en pleine largeur -->
+                <div class="flex flex-col items-center gap-10 text-center w-full">
                     
-                    <!-- Bloc Texte (Titre + Boutons) -->
-                    <div class="max-w-4xl mx-auto">
+                    <!-- Bloc Texte (Titre + Boutons) - pleine largeur -->
+                    <div class="w-full">
                         <span class="inline-block px-4 py-1.5 bg-white text-brand-orange rounded-full text-sm font-semibold mb-6 shadow-sm border border-orange-100">
                             <i class="fas fa-seedling mr-2"></i> Grandir & Apprendre ensemble
                         </span>
                         
-                        <!-- SEO H1 : Soulignement retiré, remplacé par des décorations autour -->
-                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight relative">
+                        <!-- SEO H1 -->
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight relative w-full">
                             Institut ARRISALA : <br>
                             <span class="text-brand-orange relative inline-block mt-2">
                                 <!-- Décoration Etoile Haut-Gauche -->
@@ -156,11 +141,11 @@
                         </h1>
                         
                         <!-- Slogan -->
-                        <p class="text-xl md:text-2xl font-medium text-gray-800 mb-6 italic">
+                        <p class="text-xl md:text-2xl font-medium text-gray-800 mb-6 italic w-full">
                             "Apprenez avec passion, aidez avec dévotion."
                         </p>
 
-                        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed w-full">
                             Depuis 2006, l'Institut ARRISALA offre un cadre bienveillant pour <strong>apprendre l'arabe, le néerlandais et l'anglais</strong>, ainsi qu'un <strong>soutien scolaire (école de devoirs)</strong> complet.
                         </p>
 
@@ -175,8 +160,8 @@
                         </div>
                     </div>
                     
-                    <!-- Bloc Image (En dessous, large format paysage) -->
-                    <div class="w-full max-w-5xl relative mt-8">
+                    <!-- Bloc Image (pleine largeur) -->
+                    <div class="w-full relative mt-8">
                         <!-- Image avec format paysage et enfant qui regarde vers le haut (vers le texte/CTA) -->
                         <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition duration-500">
                             <!-- Nouvelle image : Enfant qui regarde vers le haut -->
@@ -204,16 +189,16 @@
 
         <!-- Services Section -->
         <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16 max-w-2xl mx-auto">
+            <div class="container mx-auto px-4 w-full">
+                <div class="text-center mb-16 w-full">
                     <!-- H2 SEO: Mot clé géographique inclus -->
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Services Éducatifs à Bruxelles</h2>
-                    <p class="text-gray-600 text-lg">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 w-full">Nos Services Éducatifs à Bruxelles</h2>
+                    <p class="text-gray-600 text-lg w-full">
                         Une approche adaptée à chaque âge. Du ludique pour les enfants, du concret pour les adultes.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
                     <!-- Service 1: Langues -->
                     <div class="group bg-white rounded-[2rem] p-8 transition hover:shadow-xl border border-gray-100 hover:border-orange-100 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
@@ -286,11 +271,11 @@
         </section>
 
         <!-- Humanitarian Section -->
-        <section id="humanitaire" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <section id="humanitaire" class="py-28 md:py-32 bg-gray-900 text-white relative overflow-hidden">
             <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center"></div>
             
             <div class="container mx-auto px-4 relative z-10">
-                <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex flex-col md:flex-row items-center gap-14 md:gap-16">
                     <div class="md:w-1/2">
                         <div class="inline-block px-3 py-1 bg-red-600 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
                             Solidarité
@@ -325,14 +310,8 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="py-24 bg-brand-lightOrange relative">
-            <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
-                <svg class="relative block w-full h-[40px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-gray-900"></path>
-                </svg>
-            </div>
-
-            <div class="container mx-auto px-4 mt-8">
+        <section class="py-24 bg-brand-lightOrange">
+            <div class="container mx-auto px-4">
                 <!-- H2 SEO -->
                 <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Avis des parents & élèves de l'Institut</h2>
                 
@@ -605,13 +584,29 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-12 border-t border-gray-100">
-        <div class="container mx-auto px-4 flex flex-col items-center justify-center">
-            <img src="assets/logo-arrisala.png" alt="Logo Institut ARRISALA" class="h-14 w-auto object-contain mb-4" width="56" height="56">
-            <p class="font-bold text-xl text-gray-900 mb-2">Institut ARRISALA Bruxelles</p>
-            <p class="text-gray-500 text-sm text-center mb-6">Apprenez avec passion, aidez avec dévotion !</p>
-            <div class="text-xs text-gray-400">
-                &copy; 2006-2025 - Tous droits réservés.
+    <footer class="border-t border-gray-100">
+        <!-- Barre inférieure (ex-bandeau haut) -->
+        <div class="bg-brand-dark text-white py-4 text-sm">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center space-x-4 opacity-90">
+                    <span><i class="fas fa-star text-yellow-400"></i> 4.7/5 - L'excellence pour tous</span>
+                    <span class="hidden md:inline text-gray-500">|</span>
+                    <span class="hidden md:inline">Fondé en 2006</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="mailto:contact@arrisala.com" class="hover:text-brand-orange transition"><i class="fas fa-envelope mr-1"></i> contact@arrisala.com</a>
+                    <a href="tel:+32484403358" class="hover:text-brand-orange transition"><i class="fas fa-phone mr-1"></i> +32 484 40 33 58</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-12">
+            <div class="container mx-auto px-4 flex flex-col items-center justify-center">
+                <img src="assets/logo-arrisala.png" alt="Logo Institut ARRISALA" class="h-14 w-auto object-contain mb-4" width="56" height="56">
+                <p class="font-bold text-xl text-gray-900 mb-2">Institut ARRISALA Bruxelles</p>
+                <p class="text-gray-500 text-sm text-center mb-6">Apprenez avec passion, aidez avec dévotion !</p>
+                <div class="text-xs text-gray-400">
+                    &copy; 2006-2025 - Tous droits réservés.
+                </div>
             </div>
         </div>
     </footer>
