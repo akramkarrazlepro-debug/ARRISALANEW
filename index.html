@@ -62,6 +62,26 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Avis : cartes créatives */
+        .avis-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+        }
+        .avis-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 140, 0, 0.1);
+        }
+        .avis-card .quote-mark {
+            font-family: Georgia, serif;
+            line-height: 1;
+            user-select: none;
+        }
+        .avis-card .stars-wrap {
+            display: inline-flex;
+            gap: 2px;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
     </style>
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white selection:bg-orange-100 selection:text-orange-600">
@@ -301,36 +321,47 @@
         <section class="py-24 bg-brand-lightOrange">
             <div class="container mx-auto px-4">
                 <!-- H2 SEO -->
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Avis des parents & élèves de l'Institut</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Avis des parents & élèves de l'Institut</h2>
+                <p class="text-center text-gray-500 mb-12 max-w-xl mx-auto">Ils nous font confiance et partagent leur expérience</p>
                 
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Review 1 -->
-                    <div class="bg-white p-8 rounded-[2rem] rounded-bl-none shadow-md border border-orange-100 relative transform hover:-translate-y-1 transition">
-                        <div class="flex text-yellow-400 mb-4 text-sm">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="avis-card bg-white p-8 rounded-2xl border-l-4 border-brand-orange shadow-lg border border-orange-100/50 relative overflow-hidden">
+                        <span class="quote-mark absolute top-4 right-6 text-7xl text-orange-100 font-serif">"</span>
+                        <div class="stars-wrap mb-4 w-fit">
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
                         </div>
-                        <p class="text-gray-700 italic mb-6">
-                            "Je recommande fortement cette école arabe, les cours y sont donné avec la joie. Mon fils en seulement quelques mois à fortement bien appris 👍 le suivis également y est."
+                        <p class="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
+                            Je recommande fortement cette école arabe, les cours y sont donné avec la joie. Mon fils en seulement quelques mois à fortement bien appris 👍 le suivis également y est.
                         </p>
-                        <div class="flex items-center justify-end">
-                            <div class="text-right mr-3">
+                        <div class="flex items-center justify-end gap-3 relative z-10 pt-4 border-t border-orange-50">
+                            <div class="text-right">
                                 <h4 class="font-bold text-gray-900 text-sm">Sarah Zah</h4>
                                 <p class="text-xs text-gray-500">Maman d'élève</p>
                             </div>
-                            <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold">S</div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center text-brand-orange font-bold text-lg shadow-inner">S</div>
                         </div>
                     </div>
 
                     <!-- Review 2 -->
-                    <div class="bg-white p-8 rounded-[2rem] rounded-br-none shadow-md border border-orange-100 relative transform hover:-translate-y-1 transition">
-                        <div class="flex text-yellow-400 mb-4 text-sm">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="avis-card bg-white p-8 rounded-2xl border-l-4 border-brand-blue shadow-lg border border-blue-100/50 relative overflow-hidden">
+                        <span class="quote-mark absolute top-4 right-6 text-7xl text-blue-100 font-serif">"</span>
+                        <div class="stars-wrap mb-4 w-fit">
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
+                            <i class="fas fa-star text-amber-500 text-sm"></i>
                         </div>
-                        <p class="text-gray-700 italic mb-6">
-                            "C'est la première année de ma fille dans cette institut. Personnel très sympa et professionnel. Je recommande !"
+                        <p class="text-gray-700 italic mb-6 relative z-10 leading-relaxed">
+                            C'est la première année de ma fille dans cette institut. Personnel très sympa et professionnel. Je recommande !
                         </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-3">A</div>
+                        <div class="flex items-center gap-3 relative z-10 pt-4 border-t border-blue-50">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center text-brand-blue font-bold text-lg shadow-inner">A</div>
                             <div>
                                 <h4 class="font-bold text-gray-900 text-sm">Smahane Azzaoui</h4>
                                 <p class="text-xs text-gray-500">Maman d'élève</p>
