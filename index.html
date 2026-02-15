@@ -348,7 +348,7 @@
                 <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Avis des parents & élèves de l'Institut</h2>
                 <p class="text-center text-gray-500 mb-12 max-w-xl mx-auto">Ils nous font confiance et partagent leur expérience</p>
                 
-                <div class="avis-scroll max-w-6xl mx-auto">
+                <div id="avis-scroll" class="avis-scroll max-w-6xl mx-auto">
                     <!-- Review 1 -->
                     <div class="avis-card bg-white p-8 rounded-2xl border-l-4 border-brand-orange shadow-lg border border-orange-100/50 relative overflow-hidden">
                         <span class="quote-mark absolute top-4 right-6 text-7xl text-orange-100 font-serif">"</span>
@@ -694,7 +694,7 @@
         </div>
     </footer>
 
-    <!-- Scripts for View Switching -->
+    <!-- Scripts for View Switching + défilement auto des avis -->
     <script>
         function showSupport() {
             document.getElementById('home-view').classList.add('hidden-section');
@@ -707,6 +707,40 @@
             document.getElementById('home-view').classList.remove('hidden-section');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Défilement automatique des avis
+        (function() {
+            var scrollEl = document.getElementById('avis-scroll');
+            if (!scrollEl) return;
+            var cardWidth = 320 + 24; // min-width + gap
+            var step = cardWidth;
+            var delay = 3500;
+            var paused = false;
+            var timer = null;
+
+            function autoScroll() {
+                if (paused) return;
+                var maxScroll = scrollEl.scrollWidth - scrollEl.clientWidth;
+                if (maxScroll <= 0) return;
+                var next = scrollEl.scrollLeft + step;
+                if (next >= maxScroll) next = 0;
+                scrollEl.scrollTo({ left: next, behavior: 'smooth' });
+            }
+
+            function startTimer() {
+                timer = setInterval(autoScroll, delay);
+            }
+            function stopTimer() {
+                if (timer) clearInterval(timer);
+            }
+
+            scrollEl.addEventListener('mouseenter', function() { paused = true; stopTimer(); });
+            scrollEl.addEventListener('mouseleave', function() { paused = false; startTimer(); });
+            scrollEl.addEventListener('touchstart', function() { paused = true; stopTimer(); }, { passive: true });
+            scrollEl.addEventListener('touchend', function() { setTimeout(function() { paused = false; startTimer(); }, 3000); }, { passive: true });
+
+            startTimer();
+        })();
     </script>
 </body>
 </html>
