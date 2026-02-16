@@ -117,6 +117,9 @@
             background: #FF8C00;
             border-radius: 3px;
         }
+        /* Décoration légère première page */
+        .hero-deco-circle { opacity: 0.15; }
+        .section-deco-line { width: 60px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #FF8C00, #fed7aa); }
     </style>
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white selection:bg-orange-100 selection:text-orange-600">
@@ -193,9 +196,11 @@
                             <span class="inline-block mt-2">à Bruxelles</span>
                         </h1>
 
-                        <p class="text-lg text-gray-600 mb-8 leading-relaxed w-full">
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed w-full relative">
                             Depuis 2006, l'Institut ARRISALA offre un cadre bienveillant pour <strong>apprendre l'arabe, le néerlandais et l'anglais</strong>,<br>
                             ainsi qu'un <strong>soutien scolaire (école de devoirs)</strong> complet.
+                            <span class="absolute -left-4 top-1/2 -translate-y-1/2 text-orange-200 text-2xl opacity-60 hidden md:block"><i class="fas fa-book-open"></i></span>
+                            <span class="absolute -right-4 top-1/2 -translate-y-1/2 text-blue-200 text-2xl opacity-60 hidden md:block"><i class="fas fa-pencil-alt"></i></span>
                         </p>
 
                         <!-- Boutons centrés -->
@@ -231,16 +236,23 @@
                         <!-- Decorative elements behind -->
                         <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"></div>
                         <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-blue rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
+                        <div class="absolute top-1/4 -right-6 w-20 h-20 bg-orange-200 rounded-full hero-deco-circle filter blur-2xl"></div>
+                        <div class="absolute bottom-1/4 -left-6 w-16 h-16 bg-amber-200 rounded-full hero-deco-circle filter blur-2xl"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-4 w-full max-w-6xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Nos Services Éducatifs à Bruxelles</h2>
-                <p class="text-gray-600 text-lg text-center mb-14">Une approche adaptée à chaque âge</p>
+        <section id="services" class="py-20 bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full filter blur-3xl opacity-40 -mr-32 -mt-32"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-blue-50 rounded-full filter blur-3xl opacity-30 -ml-24 -mb-24"></div>
+            <div class="container mx-auto px-4 w-full max-w-6xl relative z-10">
+                <div class="text-center mb-14">
+                    <div class="section-deco-line mx-auto mb-4"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Nos Services Éducatifs à Bruxelles</h2>
+                    <p class="text-gray-600 text-lg">Une approche adaptée à chaque âge</p>
+                </div>
 
                 <!-- COURS DE LANGUES -->
                 <div class="mb-16">
