@@ -551,7 +551,18 @@
                             <h2 class="text-2xl font-bold mb-4">Contactez l'Institut</h2>
                             <p class="text-orange-100 mb-6">Une question sur les inscriptions, les horaires ou nos actions sociales ? N'hésitez pas !</p>
                             
-                            <!-- Encadré adresse redesigné -->
+                            <!-- Sur mobile : Téléphone, Mail, Adresse. Sur desktop : même ordre. -->
+                            <div class="flex flex-col gap-4 mb-6 text-sm">
+                                <a href="tel:+32484403358" class="flex items-center gap-3 text-orange-100 hover:text-white transition p-3 rounded-xl bg-white/10 md:bg-transparent md:p-0">
+                                    <i class="fas fa-phone bg-white/20 p-2 rounded-lg w-9 h-9 flex items-center justify-center flex-shrink-0"></i>
+                                    <span>+32 484 40 33 58</span>
+                                </a>
+                                <a href="mailto:contact@asblarrisala.com" class="flex items-center gap-3 text-orange-100 hover:text-white transition p-3 rounded-xl bg-white/10 md:bg-transparent md:p-0">
+                                    <i class="fas fa-envelope bg-white/20 p-2 rounded-lg w-9 h-9 flex items-center justify-center flex-shrink-0"></i>
+                                    <span>contact@asblarrisala.com</span>
+                                </a>
+                            </div>
+                            <!-- Encadré adresse -->
                             <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/30 shadow-inner">
                                 <div class="flex items-start gap-4">
                                     <div class="w-12 h-12 rounded-xl bg-white/25 flex items-center justify-center flex-shrink-0">
@@ -562,16 +573,6 @@
                                         <p class="text-white font-semibold leading-snug">Rue de Birmingham 56<br>1080 Molenbeek-Saint-Jean</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="flex flex-wrap gap-4 mb-6 text-sm">
-                                <a href="mailto:contact@asblarrisala.com" class="flex items-center gap-2 text-orange-100 hover:text-white transition">
-                                    <i class="fas fa-envelope bg-white/20 p-2 rounded-lg w-9 h-9 flex items-center justify-center"></i>
-                                    <span>contact@asblarrisala.com</span>
-                                </a>
-                                <a href="tel:+32484403358" class="flex items-center gap-2 text-orange-100 hover:text-white transition">
-                                    <i class="fas fa-phone bg-white/20 p-2 rounded-lg w-9 h-9 flex items-center justify-center"></i>
-                                    <span>+32 484 40 33 58</span>
-                                </a>
                             </div>
 
                             <!-- Carte Google Maps : adresse de l'association -->
