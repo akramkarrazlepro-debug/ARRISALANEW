@@ -238,108 +238,83 @@
 
         <!-- Services Section -->
         <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-4 w-full">
-                <div class="text-center mb-16 w-full">
-                    <!-- H2 SEO: Mot clé géographique inclus -->
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 w-full">Nos Services Éducatifs à Bruxelles</h2>
-                    <p class="text-gray-600 text-lg w-full">
-                        Une approche adaptée à chaque âge. Du ludique pour les enfants, du concret pour les adultes.
-                    </p>
-                </div>
+            <div class="container mx-auto px-4 w-full max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Nos Services Éducatifs à Bruxelles</h2>
+                <p class="text-gray-600 text-lg text-center mb-14">Une approche adaptée à chaque âge</p>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
-                    <!-- 1. Cours d'arabe (enfants) -->
-                    <div class="group bg-white rounded-[2rem] p-6 transition hover:shadow-xl border-2 border-brand-orange relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-language"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Cours d'arabe <span class="block text-sm font-normal text-gray-500">pour enfants</span>
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-orange-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-brand-orange rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Arabe littéraire, apprentissage ludique adapté aux plus jeunes.</p>
-                        <a href="#contact" class="text-brand-orange font-bold hover:underline relative z-10 text-sm">En savoir plus <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
+                <!-- COURS DE LANGUES -->
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-brand-orange/10 text-brand-orange rounded-xl flex items-center justify-center mr-3"><i class="fas fa-language"></i></span>
+                        Cours de langues
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- 1. Arabe · Pour enfants (mis en avant) -->
+                        <div class="group bg-gradient-to-br from-orange-50 to-white rounded-2xl p-6 transition hover:shadow-xl border-2 border-brand-orange relative overflow-hidden shadow-md">
+                            <span class="absolute top-4 right-4 px-2.5 py-1 bg-brand-orange text-white text-xs font-bold rounded-full">Le plus demandé</span>
+                            <div class="w-14 h-14 bg-brand-orange text-white rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:scale-105 transition"><i class="fas fa-child"></i></div>
+                            <p class="text-xs font-bold uppercase tracking-wide text-brand-orange mb-1">Pour enfants</p>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Cours d'arabe</h4>
+                            <p class="text-gray-600 text-sm mb-5">Arabe littéraire : apprentissage ludique et bienveillant, adapté aux plus jeunes.</p>
+                            <a href="#contact" class="inline-flex items-center text-brand-orange font-bold text-sm hover:underline">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
 
-                    <!-- 2. Cours d'arabe (adultes) -->
-                    <div class="group bg-white rounded-[2rem] p-6 transition hover:shadow-xl border-2 border-brand-orange relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-language"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Cours d'arabe <span class="block text-sm font-normal text-gray-500">pour adultes</span>
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-orange-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-brand-orange rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Méthode active et cours du soir pour progresser à votre rythme.</p>
-                        <a href="#contact" class="text-brand-orange font-bold hover:underline relative z-10 text-sm">En savoir plus <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
+                        <!-- 2. Arabe · Pour adultes -->
+                        <div class="group bg-white rounded-2xl p-6 transition hover:shadow-xl border-2 border-gray-200 hover:border-orange-200 relative overflow-hidden">
+                            <div class="w-14 h-14 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:scale-105 transition"><i class="fas fa-user-graduate"></i></div>
+                            <p class="text-xs font-bold uppercase tracking-wide text-gray-500 mb-1">Pour adultes</p>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Cours d'arabe</h4>
+                            <p class="text-gray-600 text-sm mb-5">Méthode active et cours du soir. Progressez à votre rythme, dans un cadre bienveillant.</p>
+                            <a href="#contact" class="inline-flex items-center text-brand-orange font-bold text-sm hover:underline">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
 
-                    <!-- 3. Cours d'anglais (enfants) -->
-                    <div class="group bg-white rounded-[2rem] p-6 transition hover:shadow-xl border-2 border-amber-500 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-amber-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-globe"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Cours d'anglais <span class="block text-sm font-normal text-gray-500">pour enfants</span>
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-amber-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-amber-500 rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Apprentissage de l'anglais de manière ludique, réservé aux enfants.</p>
-                        <a href="#contact" class="text-amber-600 font-bold hover:underline relative z-10 text-sm">En savoir plus <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
+                        <!-- 3. Anglais · Pour enfants -->
+                        <div class="group bg-white rounded-2xl p-6 transition hover:shadow-xl border-2 border-gray-200 hover:border-amber-200 relative overflow-hidden">
+                            <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:scale-105 transition"><i class="fas fa-child"></i></div>
+                            <p class="text-xs font-bold uppercase tracking-wide text-amber-600 mb-1">Pour enfants</p>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Cours d'anglais</h4>
+                            <p class="text-gray-600 text-sm mb-5">Apprentissage de l'anglais de manière ludique, réservé aux enfants.</p>
+                            <a href="#contact" class="inline-flex items-center text-amber-600 font-bold text-sm hover:underline">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
 
-                    <!-- 4. Cours de néerlandais (enfants) -->
-                    <div class="group bg-white rounded-[2rem] p-6 transition hover:shadow-xl border-2 border-orange-400 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-orange-100 text-orange-500 rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-globe-europe"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Cours de néerlandais <span class="block text-sm font-normal text-gray-500">pour enfants</span>
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-orange-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-orange-500 rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Apprentissage du néerlandais de manière ludique, réservé aux enfants.</p>
-                        <a href="#contact" class="text-orange-600 font-bold hover:underline relative z-10 text-sm">En savoir plus <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
-
-                    <!-- 5. Soutien scolaire -->
-                    <div class="group bg-white rounded-[2rem] p-6 transition hover:shadow-xl border-2 border-brand-blue relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-blue-100 text-brand-blue rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-book-reader"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Soutien scolaire
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-brand-blue rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Accompagnement personnalisé, aide aux devoirs, du primaire au secondaire.</p>
-                        <a href="#contact" class="text-brand-blue font-bold hover:underline relative z-10 text-sm">En savoir plus <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
-
-                    <!-- 6. Remédiation - De l'échec à la réussite -->
-                    <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : De l\'Échec à la Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-[2rem] p-6 transition hover:shadow-xl hover:-translate-y-1 border-2 border-red-400 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-rocket"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Remédiation <span class="block text-sm font-normal text-gray-500">De l'échec à la réussite</span>
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-red-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-red-500 rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Programme intensif (vacances de mai), préparation CEB & CE1D.</p>
-                        <span class="text-red-600 font-bold group-hover:underline relative z-10 text-sm">Choisir ce module <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
-                    </div>
-
-                    <!-- 7. Académie Réussite -->
-                    <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : Académie Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-[2rem] p-6 transition hover:shadow-xl hover:-translate-y-1 border-2 border-green-500 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-green-50 rounded-bl-full -mr-6 -mt-6 transition-transform group-hover:scale-110"></div>
-                        <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:-rotate-6 transition"><i class="fas fa-graduation-cap"></i></div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 relative inline-block z-10">
-                            Académie Réussite
-                            <span class="absolute bottom-0 left-0 w-full h-1 bg-green-100 rounded-full"></span>
-                            <span class="absolute bottom-0 left-0 w-0 h-1 bg-green-500 rounded-full transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 relative z-10">Suivi régulier toute l'année : aide aux devoirs, préparation examens, méthodologie.</p>
-                        <span class="text-green-600 font-bold group-hover:underline relative z-10 text-sm">Choisir ce module <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+                        <!-- 4. Néerlandais · Pour enfants -->
+                        <div class="group bg-white rounded-2xl p-6 transition hover:shadow-xl border-2 border-gray-200 hover:border-orange-200 relative overflow-hidden">
+                            <div class="w-14 h-14 bg-orange-100 text-orange-500 rounded-2xl flex items-center justify-center text-2xl mb-4 relative z-10 group-hover:scale-105 transition"><i class="fas fa-child"></i></div>
+                            <p class="text-xs font-bold uppercase tracking-wide text-orange-500 mb-1">Pour enfants</p>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Cours de néerlandais</h4>
+                            <p class="text-gray-600 text-sm mb-5">Apprentissage du néerlandais de manière ludique, réservé aux enfants.</p>
+                            <a href="#contact" class="inline-flex items-center text-orange-600 font-bold text-sm hover:underline">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
                     </div>
                 </div>
-                
+
+                <!-- SOUTIEN SCOLAIRE -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center mr-3"><i class="fas fa-book-reader"></i></span>
+                        Soutien scolaire
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Académie Réussite -->
+                        <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : Académie Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1 border-2 border-green-400 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-28 h-28 bg-green-50 rounded-bl-full -mr-7 -mt-7"></div>
+                            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-5 relative z-10"><i class="fas fa-graduation-cap"></i></div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2 relative z-10">Académie Réussite</h4>
+                            <p class="text-gray-600 text-sm mb-6 relative z-10">Suivi régulier toute l'année : aide aux devoirs, préparation aux examens (CEB, CE1D), méthodologie de travail. Pour assurer la réussite au quotidien.</p>
+                            <span class="inline-flex items-center text-green-600 font-bold text-sm relative z-10 group-hover:underline">Choisir ce module <i class="fas fa-arrow-right ml-2"></i></span>
+                        </div>
+
+                        <!-- De l'échec à la réussite (vacances de mai) -->
+                        <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : De l\'Échec à la Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1 border-2 border-red-400 relative overflow-hidden">
+                            <div class="absolute top-4 right-4 px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full">Vacances de mai</div>
+                            <div class="absolute top-0 right-0 w-28 h-28 bg-red-50 rounded-bl-full -mr-7 -mt-7"></div>
+                            <div class="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-3xl mb-5 relative z-10"><i class="fas fa-rocket"></i></div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2 relative z-10">De l'échec à la réussite</h4>
+                            <p class="text-gray-600 text-sm mb-6 relative z-10">Programme de remédiation intensive durant les <strong>vacances de mai</strong>. Préparation CEB & CE1D, rattrapage ciblé et coaching pour reprendre confiance.</p>
+                            <span class="inline-flex items-center text-red-600 font-bold text-sm relative z-10 group-hover:underline">Choisir ce module <i class="fas fa-arrow-right ml-2"></i></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
