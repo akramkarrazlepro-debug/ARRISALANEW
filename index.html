@@ -238,15 +238,10 @@
                     
                     <!-- Bloc Texte (Titre + Boutons) - pleine largeur -->
                     <div class="w-full">
-                        <span class="inline-block px-3 py-1.5 md:px-4 bg-white text-brand-orange rounded-full text-xs md:text-sm font-semibold mb-3 shadow-sm border border-orange-100">
-                            <i class="fas fa-seedling mr-2"></i> Grandir & Apprendre ensemble
+                        <span class="inline-flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white text-brand-orange font-bold text-sm md:text-base rounded-2xl shadow-lg border-2 border-brand-orange mb-5 md:mb-6">
+                            <i class="fas fa-award text-lg md:text-xl"></i>
+                            <span>Plus de 20 ans d'expérience dans l'enseignement</span>
                         </span>
-                        <p class="mb-5 md:mb-6 flex items-center justify-center">
-                            <span class="inline-flex items-center gap-2 md:gap-3 px-5 py-3 md:px-6 md:py-3.5 bg-white text-brand-orange font-bold text-base md:text-xl rounded-2xl shadow-lg border-2 border-brand-orange">
-                                <i class="fas fa-award text-xl md:text-2xl"></i>
-                                <span>Plus de 20 ans d'expérience dans l'enseignement</span>
-                            </span>
-                        </p>
                         
                         <!-- SEO H1 avec éléments décoratifs -->
                         <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-5 md:mb-6 leading-tight relative w-full px-1">
@@ -556,35 +551,34 @@
                             <h2 class="text-2xl font-bold mb-4">Contactez l'Institut</h2>
                             <p class="text-orange-100 mb-6">Une question sur les inscriptions, les horaires ou nos actions sociales ? N'hésitez pas !</p>
                             
-                            <div class="space-y-6 mb-6">
-                                <div class="flex items-start">
-                                    <i class="fas fa-map-marker-alt mt-1 mr-4 bg-white/20 p-2 rounded-lg"></i>
-                                    <div>
-                                        <h5 class="font-bold">Adresse</h5>
-                                        <p class="text-orange-100 text-sm">56 rue de Birmingham, 1080 Bruxelles</p>
+                            <!-- Encadré adresse redesigné -->
+                            <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/30 shadow-inner">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-white/25 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
                                     </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-envelope mt-1 mr-4 bg-white/20 p-2 rounded-lg"></i>
                                     <div>
-                                        <h5 class="font-bold">Email</h5>
-                                        <p class="text-orange-100 text-sm">contact@asblarrisala.com</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-phone mt-1 mr-4 bg-white/20 p-2 rounded-lg"></i>
-                                    <div>
-                                        <h5 class="font-bold">Téléphone</h5>
-                                        <p class="text-orange-100 text-sm">+32 484 40 33 58</p>
+                                        <p class="text-xs font-bold uppercase tracking-wider text-white/80 mb-1">Adresse</p>
+                                        <p class="text-white font-semibold leading-snug">Rue de Birmingham 56<br>1080 Molenbeek-Saint-Jean</p>
                                     </div>
                                 </div>
                             </div>
+                            <div class="flex flex-wrap gap-4 mb-6 text-sm">
+                                <a href="mailto:contact@asblarrisala.com" class="flex items-center gap-2 text-orange-100 hover:text-white transition">
+                                    <i class="fas fa-envelope bg-white/20 p-2 rounded-lg w-9 h-9 flex items-center justify-center"></i>
+                                    <span>contact@asblarrisala.com</span>
+                                </a>
+                                <a href="tel:+32484403358" class="flex items-center gap-2 text-orange-100 hover:text-white transition">
+                                    <i class="fas fa-phone bg-white/20 p-2 rounded-lg w-9 h-9 flex items-center justify-center"></i>
+                                    <span>+32 484 40 33 58</span>
+                                </a>
+                            </div>
 
-                            <!-- Carte : 56 rue de Birmingham, 1080 Bruxelles -->
-                            <div class="mt-auto rounded-xl overflow-hidden border-2 border-white/20 shadow-lg flex-1 min-h-[200px]">
+                            <!-- Carte : Rue de Birmingham 56, 1080 Molenbeek-Saint-Jean -->
+                            <div class="mt-auto rounded-xl overflow-hidden border-2 border-white/25 shadow-lg flex-1 min-h-[200px]">
                                 <iframe
-                                    title="Carte : Institut ARRISALA - 56 rue de Birmingham, 1080 Bruxelles"
-                                    src="https://www.openstreetmap.org/export/embed.html?bbox=4.318%2C50.862%2C4.342%2C50.870&layer=mapnik&marker=50.866%2C4.330"
+                                    title="Carte : Institut ARRISALA - Rue de Birmingham 56, 1080 Molenbeek-Saint-Jean"
+                                    src="https://www.openstreetmap.org/export/embed.html?bbox=4.3208%2C50.8608%2C4.3408%2C50.8708&layer=mapnik&marker=50.8658%2C4.3308"
                                     class="w-full h-full min-h-[200px] block border-0"
                                     loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"
@@ -592,7 +586,7 @@
                                 ></iframe>
                             </div>
                             <p class="text-orange-200/90 text-xs mt-2">
-                                <a href="https://www.openstreetmap.org/?mlat=50.866&amp;mlon=4.330#map=17/50.866/4.330" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">Ouvrir dans une fenêtre</a>
+                                <a href="https://www.openstreetmap.org/?mlat=50.8658&amp;mlon=4.3308#map=17/50.8658/4.3308" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">Ouvrir la carte</a>
                             </p>
                         </div>
                     </div>
@@ -818,7 +812,7 @@
                     <h3 class="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wide">Contact</h3>
                     <p class="text-gray-600 text-sm flex items-start gap-2 mb-2">
                         <i class="fas fa-map-marker-alt text-brand-orange mt-0.5 shrink-0"></i>
-                        56 rue de Birmingham, 1080 Bruxelles
+                        Rue de Birmingham 56, 1080 Molenbeek-Saint-Jean
                     </p>
                     <p class="text-gray-600 text-sm flex items-center gap-2 mb-2">
                         <i class="fas fa-phone text-brand-orange shrink-0"></i>
