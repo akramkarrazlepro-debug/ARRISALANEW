@@ -158,10 +158,17 @@
                     <button type="button" class="text-gray-600 hover:text-brand-orange font-medium transition flex items-center gap-1">
                         Nos Services Éducatifs <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div class="nav-dropdown absolute top-full left-0 pt-2 min-w-[240px]">
+                    <div class="nav-dropdown absolute top-full left-0 pt-2 min-w-[260px]">
                         <div class="bg-white rounded-xl shadow-lg border border-orange-100 py-2 overflow-hidden">
-                            <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block px-4 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm font-medium"><i class="fas fa-language w-5 mr-2 text-brand-orange"></i>Cours de langues</a>
-                            <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block px-4 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm"><i class="fas fa-graduation-cap w-5 mr-2 text-green-500"></i>Académie Réussite</a>
+                            <!-- Cours de langues : sous-menu avec tous les cours -->
+                            <div class="nav-lang-group relative">
+                                <span class="block px-4 py-2.5 text-gray-500 text-xs font-bold uppercase tracking-wide border-b border-orange-50"><i class="fas fa-language w-5 mr-2 text-brand-orange"></i>Cours de langues</span>
+                                <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block pl-9 pr-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm">Cours d'arabe (enfants)</a>
+                                <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block pl-9 pr-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm">Cours d'arabe (adultes)</a>
+                                <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block pl-9 pr-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm">Cours d'anglais (enfants)</a>
+                                <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block pl-9 pr-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm">Cours de néerlandais (enfants)</a>
+                            </div>
+                            <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block px-4 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm font-medium"><i class="fas fa-graduation-cap w-5 mr-2 text-green-500"></i>Académie Réussite</a>
                             <a href="#services" onclick="showHome(); setTimeout(() => document.getElementById('services').scrollIntoView({behavior: 'smooth'}), 100)" class="block px-4 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-brand-orange transition text-sm"><i class="fas fa-rocket w-5 mr-2 text-red-500"></i>De l'échec à la réussite</a>
                         </div>
                     </div>
@@ -185,7 +192,12 @@
                     Nos Services Éducatifs <i class="fas fa-chevron-down text-xs" id="mobile-services-chevron"></i>
                 </button>
                 <div id="mobile-services" class="hidden pl-4 mt-1 space-y-1 border-l-2 border-orange-100">
-                    <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">Cours de langues</button>
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-wide py-1">Cours de langues</p>
+                    <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">Cours d'arabe (enfants)</button>
+                    <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">Cours d'arabe (adultes)</button>
+                    <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">Cours d'anglais (enfants)</button>
+                    <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">Cours de néerlandais (enfants)</button>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wide pt-2 pb-1">Soutien scolaire</p>
                     <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">Académie Réussite</button>
                     <button onclick="showHome(); document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('services').scrollIntoView()" class="block w-full text-left text-gray-600 text-sm p-2 rounded hover:bg-orange-50">De l'échec à la réussite</button>
                 </div>
@@ -207,14 +219,18 @@
                     
                     <!-- Bloc Texte (Titre + Boutons) - pleine largeur -->
                     <div class="w-full">
-                        <span class="inline-block px-3 py-1.5 md:px-4 bg-white text-brand-orange rounded-full text-xs md:text-sm font-semibold mb-5 md:mb-6 shadow-sm border border-orange-100">
+                        <span class="inline-block px-3 py-1.5 md:px-4 bg-white text-brand-orange rounded-full text-xs md:text-sm font-semibold mb-3 shadow-sm border border-orange-100">
                             <i class="fas fa-seedling mr-2"></i> Grandir & Apprendre ensemble
                         </span>
+                        <p class="text-brand-orange font-bold text-sm md:text-base mb-5 md:mb-6 flex items-center justify-center gap-2 flex-wrap">
+                            <i class="fas fa-award"></i>
+                            <span>Plus de 20 ans d'expérience dans l'enseignement</span>
+                        </p>
                         
                         <!-- SEO H1 avec éléments décoratifs -->
                         <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-5 md:mb-6 leading-tight relative w-full px-1">
                             Institut ARRISALA : <br>
-                            <span class="text-brand-orange relative inline-block mt-2">
+                            <span class="text-brand-orange relative inline-block mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                                 <!-- Étoile (éloignée du texte) -->
                                 <span class="absolute -top-8 -left-14 text-yellow-400 text-3xl animate-bounce" style="animation-duration: 3s;">
                                     <i class="fas fa-star"></i>
@@ -333,7 +349,7 @@
                     </h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Académie Réussite -->
-                        <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : Académie Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1 border-2 border-green-400 relative overflow-hidden">
+                        <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); var s=document.getElementById('form-sujet');if(s)s.value='Académie Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1 border-2 border-green-400 relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-28 h-28 bg-green-50 rounded-bl-full -mr-7 -mt-7"></div>
                             <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-5 relative z-10"><i class="fas fa-graduation-cap"></i></div>
                             <h4 class="text-xl font-bold text-gray-900 mb-2 relative z-10">Académie Réussite</h4>
@@ -342,7 +358,7 @@
                         </div>
 
                         <!-- De l'échec à la réussite (style visuel comme la maquette) -->
-                        <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : De l\'Échec à la Réussite'; }, 500)" class="group cursor-pointer bg-white rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1 border-2 border-red-200 relative overflow-hidden">
+                        <div onclick="showSupport(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); var s=document.getElementById('form-sujet');if(s)s.value="De l'échec à la réussite"; }, 500)" class="group cursor-pointer bg-white rounded-2xl p-8 transition hover:shadow-xl hover:-translate-y-1 border-2 border-red-200 relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -mr-8 -mt-8"></div>
                             <!-- Badge -->
                             <span class="inline-block px-3 py-1.5 bg-red-600 text-white text-xs font-bold uppercase tracking-wide rounded-lg mb-5 relative z-10">Remédiation intensive</span>
@@ -545,40 +561,55 @@
                         </div>
                     </div>
 
-                    <!-- Form Side -->
-                    <div class="md:w-7/12 p-10 bg-gray-50">
-                        <form onsubmit="event.preventDefault(); alert('Merci pour votre message. Nous vous recontacterons bientôt.');">
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <!-- Form Side : design conversion -->
+                    <div class="md:w-7/12 p-8 md:p-10 bg-white">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">Demande d'inscription ou d'information</h3>
+                            <p class="text-gray-500 text-sm">Remplissez le formulaire, nous vous recontactons sous 48h.</p>
+                        </div>
+                        <form onsubmit="event.preventDefault(); alert('Merci pour votre message. Nous vous recontacterons bientôt.');" class="space-y-5">
+                            <div class="grid md:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Nom complet</label>
-                                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="Votre nom">
+                                    <label for="form-nom" class="block text-sm font-bold text-gray-800 mb-1.5">Nom complet</label>
+                                    <input id="form-nom" type="text" required class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="Ex. Marie Dupont">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
-                                    <input type="email" class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="votre@email.com">
+                                    <label for="form-email" class="block text-sm font-bold text-gray-800 mb-1.5">Email</label>
+                                    <input id="form-email" type="email" required class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="votre@email.com">
                                 </div>
                             </div>
-                            <div class="mb-6">
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Sujet / Module souhaité</label>
+                            <div>
+                                <label for="form-tel" class="block text-sm font-bold text-gray-800 mb-1.5">Numéro de téléphone</label>
+                                <input id="form-tel" type="tel" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="Ex. +32 4XX XX XX XX">
+                            </div>
+                            <div>
+                                <label for="form-sujet" class="block text-sm font-bold text-gray-800 mb-1.5">Sujet / Service souhaité</label>
                                 <div class="relative">
-                                    <select class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition appearance-none">
-                                        <option disabled selected>Choisissez une option...</option>
-                                        <option>Inscription : Académie Réussite</option>
-                                        <option>Inscription : De l'Échec à la Réussite</option>
-                                        <option>Inscription : Cours de Langues</option>
-                                        <option>Autre demande</option>
+                                    <select id="form-sujet" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition appearance-none pr-10">
+                                        <option value="" disabled selected>Choisissez un service...</option>
+                                        <optgroup label="Cours de langues">
+                                            <option value="Cours d'arabe (enfants)">Cours d'arabe (enfants)</option>
+                                            <option value="Cours d'arabe (adultes)">Cours d'arabe (adultes)</option>
+                                            <option value="Cours d'anglais (enfants)">Cours d'anglais (enfants)</option>
+                                            <option value="Cours de néerlandais (enfants)">Cours de néerlandais (enfants)</option>
+                                        </optgroup>
+                                        <optgroup label="Soutien scolaire">
+                                            <option value="Académie Réussite">Académie Réussite</option>
+                                            <option value="De l'échec à la réussite">De l'échec à la réussite</option>
+                                        </optgroup>
+                                        <option value="Autre demande">Autre demande</option>
                                     </select>
-                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400">
                                         <i class="fas fa-chevron-down text-sm"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-6">
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Message</label>
-                                <textarea rows="3" class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="Précisez le niveau scolaire de l'enfant..."></textarea>
+                            <div>
+                                <label for="form-message" class="block text-sm font-bold text-gray-800 mb-1.5">Message</label>
+                                <textarea id="form-message" rows="4" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400 resize-none" placeholder="Précisez votre demande, le niveau ou l'âge de l'enfant si pertinent..."></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-brand-dark text-white font-bold py-4 rounded-xl hover:bg-gray-800 transition shadow-lg transform hover:-translate-y-1">
-                                Envoyer la demande
+                            <button type="submit" class="w-full bg-brand-orange text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-lg shadow-orange-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Envoyer ma demande
                             </button>
                         </form>
                     </div>
@@ -660,7 +691,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button onclick="showHome(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : Académie Réussite'; }, 500)" class="w-full py-3 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition shadow-lg mt-auto">
+                    <button onclick="showHome(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); var s=document.getElementById('form-sujet');if(s)s.value='Académie Réussite'; }, 500)" class="w-full py-3 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition shadow-lg mt-auto">
                         Choisir ce module
                     </button>
                 </div>
@@ -715,7 +746,7 @@
                         </li>
                     </ul>
                     <!-- Bouton en ROUGE -->
-                    <button onclick="showHome(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.querySelector('select').value = 'Inscription : De l\'Échec à la Réussite'; }, 500)" class="w-full py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg mt-auto">
+                    <button onclick="showHome(); setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); var s=document.getElementById('form-sujet');if(s)s.value="De l'échec à la réussite"; }, 500)" class="w-full py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition shadow-lg mt-auto">
                         Choisir ce module
                     </button>
                 </div>
