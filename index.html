@@ -606,25 +606,26 @@
                             <h3 class="text-2xl font-bold text-gray-900 mb-1">Demande d'inscription ou d'information</h3>
                             <p class="text-gray-500 text-sm">Remplissez le formulaire, nous vous recontactons sous 48h.</p>
                         </div>
-                        <form onsubmit="event.preventDefault(); alert('Merci pour votre message. Nous vous recontacterons bientôt.');" class="space-y-5">
+                        <form id="contact-form" action="https://formspree.io/f/mdalllqj" method="POST" class="space-y-5">
+                            <input type="text" name="_subject" value="Nouvelle demande Institut ARRISALA" hidden>
                             <div class="grid md:grid-cols-2 gap-5">
                                 <div>
                                     <label for="form-nom" class="block text-sm font-bold text-gray-800 mb-1.5">Nom complet</label>
-                                    <input id="form-nom" type="text" required class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="Ex. Marie Dupont">
+                                    <input id="form-nom" name="nom" type="text" required class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="Ex. Marie Dupont">
                                 </div>
                                 <div>
                                     <label for="form-email" class="block text-sm font-bold text-gray-800 mb-1.5">Email</label>
-                                    <input id="form-email" type="email" required class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="votre@email.com">
+                                    <input id="form-email" name="email" type="email" required class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="votre@email.com">
                                 </div>
                             </div>
                             <div>
                                 <label for="form-tel" class="block text-sm font-bold text-gray-800 mb-1.5">Numéro de téléphone</label>
-                                <input id="form-tel" type="tel" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="Ex. +32 4XX XX XX XX">
+                                <input id="form-tel" name="telephone" type="tel" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400" placeholder="Ex. +32 4XX XX XX XX">
                             </div>
                             <div>
                                 <label for="form-sujet" class="block text-sm font-bold text-gray-800 mb-1.5">Sujet / Service souhaité</label>
                                 <div class="relative">
-                                    <select id="form-sujet" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition appearance-none pr-10">
+                                    <select id="form-sujet" name="sujet" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition appearance-none pr-10">
                                         <option value="" disabled selected>Choisissez un service...</option>
                                         <optgroup label="Cours de langues">
                                             <option value="Cours d'arabe (enfants)">Cours d'arabe (enfants)</option>
@@ -645,9 +646,10 @@
                             </div>
                             <div>
                                 <label for="form-message" class="block text-sm font-bold text-gray-800 mb-1.5">Message</label>
-                                <textarea id="form-message" rows="4" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400 resize-none" placeholder="Précisez votre demande, le niveau ou l'âge de l'enfant si pertinent..."></textarea>
+                                <textarea id="form-message" name="message" rows="4" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-brand-orange focus:bg-white focus:ring-2 focus:ring-orange-100 outline-none transition placeholder-gray-400 resize-none" placeholder="Précisez votre demande, le niveau ou l'âge de l'enfant si pertinent..."></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-brand-orange text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-lg shadow-orange-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <p id="form-success" class="hidden text-green-600 font-medium text-center py-2"><i class="fas fa-check-circle mr-2"></i>Merci ! Nous vous recontacterons sous 48h.</p>
+                            <button type="submit" id="form-submit-btn" class="w-full bg-brand-orange text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-lg shadow-orange-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                                 <i class="fas fa-paper-plane"></i> Envoyer ma demande
                             </button>
                         </form>
@@ -911,6 +913,34 @@
             scrollEl.addEventListener('touchend', function() { setTimeout(function() { paused = false; startTimer(); }, 3000); }, { passive: true });
 
             startTimer();
+        })();
+
+        // Formulaire contact : envoi AJAX vers Formspree (https://formspree.io/f/mdalllqj)
+        (function() {
+            var form = document.getElementById('contact-form');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = document.getElementById('form-submit-btn');
+                var successEl = document.getElementById('form-success');
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Envoi...';
+                fetch(form.getAttribute('action'), {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(function(r) { return r.json(); })
+                .then(function() {
+                    btn.classList.add('hidden');
+                    successEl.classList.remove('hidden');
+                })
+                .catch(function() {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer ma demande';
+                    alert('Une erreur est survenue. Vous pouvez nous écrire à contact@asblarrisala.com');
+                });
+            });
         })();
     </script>
 </body>
