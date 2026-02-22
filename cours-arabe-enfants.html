@@ -22,9 +22,19 @@
     </script>
     <style>
         .fluo { background: linear-gradient(180deg, transparent 55%, rgba(255, 193, 7, 0.45) 55%); padding: 0 2px; }
+        .page-dynamism { position: relative; }
+        .page-dynamism::before,
+        .page-dynamism::after { content: ''; position: fixed; top: 0; bottom: 0; width: 280px; max-width: 22vw; pointer-events: none; z-index: 0; }
+        .page-dynamism::before { left: 0; background: linear-gradient(90deg, rgba(255, 140, 0, 0.06) 0%, transparent 100%); }
+        .page-dynamism::after { right: 0; background: linear-gradient(270deg, rgba(255, 140, 0, 0.06) 0%, transparent 100%); }
+        @media (max-width: 1024px) { .page-dynamism::before, .page-dynamism::after { width: 120px; } }
+        @media (max-width: 768px) { .page-dynamism::before, .page-dynamism::after { width: 60px; opacity: 0.7; } }
+        .page-dynamism .deco-blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.2; pointer-events: none; z-index: 0; }
+        .page-dynamism .deco-blob-1 { width: 320px; height: 320px; background: #FF8C00; top: 15%; left: -80px; }
+        .page-dynamism .deco-blob-2 { width: 240px; height: 240px; background: #FFB347; bottom: 25%; right: -60px; }
     </style>
 </head>
-<body class="font-sans text-gray-700 antialiased bg-white">
+<body class="font-sans text-gray-700 antialiased bg-white page-dynamism">
 
     <nav class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-orange-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -60,11 +70,10 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-4 py-12 md:py-16">
+        <div class="container mx-auto px-4 py-12 md:py-16 relative z-10 bg-gradient-to-b from-orange-50/30 to-transparent">
+            <div class="deco-blob deco-blob-1" aria-hidden="true"></div>
+            <div class="deco-blob deco-blob-2" aria-hidden="true"></div>
             <div class="max-w-3xl mx-auto mb-16">
-                <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                    À l'Institut ARRISALA, nous proposons des <strong>cours d'arabe pour les enfants</strong> basés sur l'<strong><span class="fluo">arabe littéraire</span></strong> (fusḥa). Notre objectif est de donner le goût de la langue dans un environnement bienveillant, où chaque enfant progresse à son rythme.
-                </p>
                 <p class="text-gray-600 leading-relaxed">
                     Avec <span class="fluo">plus de 20 ans d'expérience</span> dans l'enseignement, notre équipe met en œuvre une méthode active : jeux, supports visuels et interactions pour que l'arabe devienne une langue familière et agréable à apprendre.
                 </p>
@@ -73,11 +82,11 @@
             <section class="max-w-4xl mx-auto mb-16">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-child text-brand-orange"></i> Pour qui ?</h2>
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100">
-                    <p class="text-gray-600 mb-4">Ces cours s'adressent aux <strong>enfants <span class="fluo">à partir de 4 ans</span></strong> qui souhaitent découvrir ou approfondir l'arabe, que ce soit pour un lien familial, culturel ou scolaire. Nous accueillons les débutants comme les enfants ayant déjà des bases.</p>
+                    <p class="text-gray-600 mb-4">Ces cours s'adressent aux <strong><span class="fluo">enfants à partir de 4 ans</span></strong> qui souhaitent découvrir ou approfondir l'arabe, que ce soit pour un lien familial, culturel ou scolaire. Nous accueillons les débutants comme les enfants ayant déjà des bases.</p>
 <ul class="space-y-2 text-gray-600">
                     <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">À partir de 4 ans</span></li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span>Groupes par âge et niveau pour un apprentissage adapté</span></li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span>Cadre rassurant et motivant</span></li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Groupes par âge et niveau pour un apprentissage adapté</span></li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Cadre rassurant et motivant</span></li>
                 </ul>
                 </div>
             </section>
@@ -87,9 +96,9 @@
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100">
                     <p class="text-gray-600 mb-4">Nous privilégions une <strong><span class="fluo">pédagogie ludique et bienveillante</span></strong> : chansons, jeux, histoires et activités manuelles pour ancrer la langue <span class="fluo">sans pression</span>. L'arabe littéraire est enseigné de manière progressive (alphabet, lecture, compréhension, expression).</p>
                     <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span>Découverte de l'alphabet et de la prononciation</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span>Lecture et compréhension adaptées à l'âge</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span>Expression orale et écoute dans un cadre bienveillant</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Découverte de l'alphabet et de la prononciation</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Lecture et compréhension adaptées à l'âge</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Expression orale et écoute dans un cadre bienveillant</span></li>
                     </ul>
                 </div>
             </section>
