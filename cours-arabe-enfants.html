@@ -22,6 +22,7 @@
     </script>
     <style>
         .fluo { background: linear-gradient(180deg, transparent 55%, rgba(255, 193, 7, 0.45) 55%); padding: 0 2px; }
+        .bg-pattern { background-image: radial-gradient(#FF8C00 0.5px, transparent 0.5px), radial-gradient(#FF8C00 0.5px, #fff 0.5px); background-size: 20px 20px; background-position: 0 0, 10px 10px; opacity: 0.08; }
         .page-dynamism { position: relative; }
         .page-dynamism::before,
         .page-dynamism::after { content: ''; position: fixed; top: 0; bottom: 0; width: 280px; max-width: 22vw; pointer-events: none; z-index: 0; }
@@ -32,6 +33,10 @@
         .page-dynamism .deco-blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.2; pointer-events: none; z-index: 0; }
         .page-dynamism .deco-blob-1 { width: 320px; height: 320px; background: #FF8C00; top: 15%; left: -80px; }
         .page-dynamism .deco-blob-2 { width: 240px; height: 240px; background: #FFB347; bottom: 25%; right: -60px; }
+        .page-dynamism .deco-blob-3 { width: 200px; height: 200px; background: #fde68a; top: 50%; right: -50px; filter: blur(70px); opacity: 0.35; mix-blend-mode: multiply; }
+        .page-dynamism .deco-blob-4 { width: 180px; height: 180px; background: #93c5fd; bottom: 40%; left: -40px; filter: blur(60px); opacity: 0.25; mix-blend-mode: multiply; }
+        @keyframes bounce-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .animate-bounce-soft { animation: bounce-soft 3s ease-in-out infinite; }
     </style>
 </head>
 <body class="font-sans text-gray-700 antialiased bg-white page-dynamism">
@@ -57,13 +62,21 @@
 
     <main class="min-h-screen">
         <div class="bg-gradient-to-br from-brand-orange/10 to-orange-50 text-gray-900 py-16 md:py-24 border-b border-orange-100 relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern" aria-hidden="true"></div>
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse" aria-hidden="true"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50" aria-hidden="true"></div>
             <a href="index.html" class="absolute top-2 left-4 md:top-3 md:left-6 z-20 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-gray-800 hover:text-brand-orange text-sm font-medium transition shadow-md border border-gray-200/60">
                 <i class="fas fa-arrow-left"></i> Retour à l'accueil
             </a>
             <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center pt-4 md:pt-6 max-w-3xl mx-auto flex flex-col items-center">
+                <div class="text-center pt-4 md:pt-6 max-w-3xl mx-auto flex flex-col items-center relative">
+                    <span class="absolute top-2 -right-4 w-2 h-2 bg-green-400 rounded-full" aria-hidden="true"></span>
+                    <span class="absolute bottom-8 -left-2 w-2 h-2 bg-amber-500 rounded-full animate-pulse" aria-hidden="true"></span>
                     <span class="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-bold uppercase rounded-full mb-4">Pour enfants</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center w-full">Cours d'arabe pour enfants</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center w-full relative">
+                        <span class="absolute -top-6 left-1/4 text-yellow-400 text-2xl opacity-80 animate-bounce-soft" aria-hidden="true"><i class="fas fa-star"></i></span>
+                        Cours d'arabe pour enfants
+                    </h1>
                     <p class="text-gray-600 text-lg mb-6 text-center">Arabe littéraire : apprentissage ludique et bienveillant, à partir de 4 ans.</p>
                     <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-orange text-white rounded-full font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition">S'inscrire</a>
                 </div>
@@ -71,17 +84,21 @@
         </div>
 
         <div class="container mx-auto px-4 py-12 md:py-16 relative z-10 bg-gradient-to-b from-orange-50/30 to-transparent">
+            <div class="absolute inset-0 opacity-[0.06] pointer-events-none z-0" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');" aria-hidden="true"></div>
             <div class="deco-blob deco-blob-1" aria-hidden="true"></div>
             <div class="deco-blob deco-blob-2" aria-hidden="true"></div>
-            <div class="max-w-3xl mx-auto mb-16">
+            <div class="deco-blob deco-blob-3" aria-hidden="true"></div>
+            <div class="deco-blob deco-blob-4" aria-hidden="true"></div>
+            <div class="max-w-3xl mx-auto mb-16 relative z-10">
                 <p class="text-gray-600 leading-relaxed">
                     Avec <span class="fluo">plus de 20 ans d'expérience</span> dans l'enseignement, notre équipe met en œuvre une méthode active : jeux, supports visuels et interactions pour que l'arabe devienne une langue familière et agréable à apprendre.
                 </p>
             </div>
 
-            <section class="max-w-4xl mx-auto mb-16">
+            <section class="max-w-4xl mx-auto mb-16 relative z-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-child text-brand-orange"></i> Pour qui ?</h2>
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100">
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-28 h-28 bg-orange-50 rounded-bl-full -mr-7 -mt-7" aria-hidden="true"></div>
                     <p class="text-gray-600 mb-4">Ces cours s'adressent aux <strong><span class="fluo">enfants à partir de 4 ans</span></strong> qui souhaitent découvrir ou approfondir l'arabe, que ce soit pour un lien familial, culturel ou scolaire. Nous accueillons les débutants comme les enfants ayant déjà des bases.</p>
 <ul class="space-y-2 text-gray-600">
                     <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">À partir de 4 ans</span></li>
@@ -91,9 +108,10 @@
                 </div>
             </section>
 
-            <section class="max-w-4xl mx-auto mb-16">
+            <section class="max-w-4xl mx-auto mb-16 relative z-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-book-open text-brand-orange"></i> Notre approche</h2>
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100">
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -mr-8 -mt-8" aria-hidden="true"></div>
                     <p class="text-gray-600 mb-4">Nous privilégions une <strong><span class="fluo">pédagogie ludique et bienveillante</span></strong> : chansons, jeux, histoires et activités manuelles pour ancrer la langue <span class="fluo">sans pression</span>. L'arabe littéraire est enseigné de manière progressive (alphabet, lecture, compréhension, expression).</p>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Découverte de l'alphabet et de la prononciation</span></li>
@@ -103,9 +121,10 @@
                 </div>
             </section>
 
-            <section class="max-w-4xl mx-auto mb-16">
+            <section class="max-w-4xl mx-auto mb-16 relative z-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-clock text-brand-orange"></i> Horaires disponibles</h2>
-                <div class="bg-brand-lightOrange rounded-2xl p-6 md:p-8 border-2 border-orange-100">
+                <div class="bg-brand-lightOrange rounded-2xl p-6 md:p-8 border-2 border-orange-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-orange-200/30 rounded-bl-full -mr-6 -mt-6" aria-hidden="true"></div>
                     <p class="text-gray-700 mb-4">Les cours ont lieu à <strong><span class="fluo">Molenbeek-Saint-Jean</span>, Rue de Birmingham 56</strong>. Créneaux proposés :</p>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-brand-orange"></i><span>Mercredi : 14h – 18h</span></li>
@@ -117,8 +136,9 @@
                 </div>
             </section>
 
-            <div class="max-w-2xl mx-auto text-center pb-16">
-                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-2 border-brand-orange">
+            <div class="max-w-2xl mx-auto text-center pb-16 relative z-10">
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-2 border-brand-orange relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-bl-full -mr-10 -mt-10" aria-hidden="true"></div>
                     <p class="text-gray-700 text-lg mb-6">Vous souhaitez inscrire votre enfant au cours d'arabe ?</p>
                     <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-orange text-white rounded-full font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition">Nous contacter / S'inscrire</a>
                     <p class="mt-4 text-sm text-gray-500"><a href="cours-langues.html" class="text-brand-orange hover:underline">Voir tous nos cours de langues</a></p>
