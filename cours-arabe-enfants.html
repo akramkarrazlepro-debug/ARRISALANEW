@@ -22,22 +22,27 @@
     </script>
     <style>
         .fluo { background: linear-gradient(180deg, transparent 55%, rgba(255, 193, 7, 0.45) 55%); padding: 0 2px; }
-        .bg-pattern { background-image: radial-gradient(#9ca3af 0.5px, transparent 0.5px), radial-gradient(#9ca3af 0.5px, #fff 0.5px); background-size: 24px 24px; background-position: 0 0, 12px 12px; opacity: 0.06; }
+        .bg-pattern { background-image: radial-gradient(#FF8C00 0.5px, transparent 0.5px), radial-gradient(#FF8C00 0.5px, #fff 0.5px); background-size: 20px 20px; background-position: 0 0, 10px 10px; opacity: 0.08; }
         .page-dynamism { position: relative; }
         .page-dynamism::before,
         .page-dynamism::after { content: ''; position: fixed; top: 0; bottom: 0; width: 280px; max-width: 22vw; pointer-events: none; z-index: 0; }
-        .page-dynamism::before { left: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.02) 0%, transparent 100%); }
-        .page-dynamism::after { right: 0; background: linear-gradient(270deg, rgba(0, 0, 0, 0.02) 0%, transparent 100%); }
+        .page-dynamism::before { left: 0; background: linear-gradient(90deg, rgba(255, 140, 0, 0.06) 0%, transparent 100%); }
+        .page-dynamism::after { right: 0; background: linear-gradient(270deg, rgba(255, 140, 0, 0.06) 0%, transparent 100%); }
         @media (max-width: 1024px) { .page-dynamism::before, .page-dynamism::after { width: 120px; } }
         @media (max-width: 768px) { .page-dynamism::before, .page-dynamism::after { width: 60px; opacity: 0.7; } }
         .page-dynamism .deco-blob { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0; }
-        .page-dynamism .deco-blob-1 { width: 280px; height: 280px; background: #f3f4f6; top: 15%; left: -60px; opacity: 0.6; }
-        .page-dynamism .deco-blob-2 { width: 200px; height: 200px; background: #e5e7eb; bottom: 25%; right: -40px; opacity: 0.5; }
-        .page-dynamism .deco-blob-3 { width: 160px; height: 160px; background: #fef3c7; top: 50%; right: -30px; filter: blur(70px); opacity: 0.2; }
-        .page-dynamism .deco-blob-4 { width: 180px; height: 180px; background: #93c5fd; bottom: 40%; left: -40px; filter: blur(60px); opacity: 0.15; mix-blend-mode: multiply; }
-        .deco-line { height: 3px; width: 60px; border-radius: 2px; background: linear-gradient(90deg, #e5e7eb, transparent); }
-        .deco-line-right { height: 3px; width: 60px; border-radius: 2px; background: linear-gradient(270deg, #e5e7eb, transparent); margin-left: auto; }
-        .deco-dot { width: 6px; height: 6px; border-radius: 50%; background: #d1d5db; }
+        .page-dynamism .deco-blob-1 { width: 320px; height: 320px; background: #FF8C00; top: 15%; left: -80px; opacity: 0.2; }
+        .page-dynamism .deco-blob-2 { width: 240px; height: 240px; background: #FFB347; bottom: 25%; right: -60px; opacity: 0.2; }
+        .page-dynamism .deco-blob-3 { width: 200px; height: 200px; background: #fde68a; top: 50%; right: -50px; filter: blur(70px); opacity: 0.35; mix-blend-mode: multiply; }
+        .page-dynamism .deco-blob-4 { width: 180px; height: 180px; background: #93c5fd; bottom: 40%; left: -40px; filter: blur(60px); opacity: 0.25; mix-blend-mode: multiply; }
+        .deco-line { height: 3px; width: 60px; border-radius: 2px; background: linear-gradient(90deg, #fed7aa, transparent); }
+        .deco-line-right { height: 3px; width: 60px; border-radius: 2px; background: linear-gradient(270deg, #fed7aa, transparent); margin-left: auto; }
+        .deco-dot { width: 6px; height: 6px; border-radius: 50%; background: #fdba74; }
+        .title-frame { position: relative; padding: 1.5rem 2rem; }
+        .title-frame::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; max-width: 320px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.3), transparent); border-radius: 1px; }
+        .title-frame::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60%; max-width: 240px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.2), transparent); border-radius: 1px; }
+        .card-deco { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #fed7aa; pointer-events: none; }
+        .card-deco-big { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(255, 140, 0, 0.2); pointer-events: none; }
         @keyframes bounce-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .animate-bounce-soft { animation: bounce-soft 3s ease-in-out infinite; }
         .scroll-reveal { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -67,17 +72,21 @@
     </nav>
 
     <main class="min-h-screen">
-        <div class="bg-gradient-to-br from-gray-50 to-white text-gray-900 py-16 md:py-24 border-b border-gray-100 relative overflow-hidden">
+        <div class="bg-gradient-to-br from-brand-orange/10 to-orange-50 text-gray-900 py-16 md:py-24 border-b border-orange-100 relative overflow-hidden">
             <div class="absolute inset-0 bg-pattern" aria-hidden="true"></div>
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse" aria-hidden="true"></div>
-            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30" aria-hidden="true"></div>
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse" aria-hidden="true"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50" aria-hidden="true"></div>
             <a href="index.html" class="absolute top-2 left-4 md:top-3 md:left-6 z-20 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-gray-800 hover:text-brand-orange text-sm font-medium transition shadow-md border border-gray-200/60">
                 <i class="fas fa-arrow-left"></i> Retour à l'accueil
             </a>
             <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center pt-4 md:pt-6 max-w-3xl mx-auto flex flex-col items-center relative">
+                <div class="text-center pt-4 md:pt-6 max-w-3xl mx-auto flex flex-col items-center relative title-frame">
                     <span class="absolute top-2 -right-4 w-2 h-2 bg-green-400 rounded-full" aria-hidden="true"></span>
+                    <span class="absolute top-4 left-1/4 w-2 h-2 bg-amber-500 rounded-full animate-pulse" aria-hidden="true"></span>
+                    <span class="absolute bottom-12 -right-2 w-2 h-2 bg-brand-orange rounded-full opacity-70" aria-hidden="true"></span>
                     <span class="absolute bottom-8 -left-2 w-2 h-2 bg-amber-500 rounded-full animate-pulse" aria-hidden="true"></span>
+                    <span class="absolute -top-2 right-1/4 text-orange-200 text-xl opacity-90" aria-hidden="true"><i class="fas fa-book-open"></i></span>
+                    <span class="absolute -bottom-1 left-1/3 text-amber-200 text-lg opacity-80" aria-hidden="true"><i class="fas fa-star"></i></span>
                     <span class="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-bold uppercase rounded-full mb-4">Pour enfants</span>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center w-full relative">
                         <span class="absolute -top-6 left-1/4 text-yellow-400 text-2xl opacity-80 animate-bounce-soft" aria-hidden="true"><i class="fas fa-star"></i></span>
@@ -89,8 +98,8 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-4 py-12 md:py-16 relative z-10 bg-gradient-to-b from-gray-50/80 to-white">
-            <div class="absolute inset-0 opacity-[0.04] pointer-events-none z-0" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');" aria-hidden="true"></div>
+        <div class="container mx-auto px-4 py-12 md:py-16 relative z-10 bg-gradient-to-b from-orange-50/30 to-white">
+            <div class="absolute inset-0 opacity-[0.06] pointer-events-none z-0" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');" aria-hidden="true"></div>
             <div class="deco-blob deco-blob-1" aria-hidden="true"></div>
             <div class="deco-blob deco-blob-2" aria-hidden="true"></div>
             <div class="deco-blob deco-blob-3" aria-hidden="true"></div>
@@ -102,11 +111,13 @@
             </div>
 
             <section class="max-w-4xl mx-auto mb-16 relative z-10" data-scroll-reveal>
-                <div class="scroll-reveal">
+                <div class="scroll-reveal relative">
+                <span class="card-deco -left-4 top-16 md:top-20" aria-hidden="true"></span>
+                <span class="card-deco-big -right-2 top-1/3 hidden md:block" aria-hidden="true"></span>
                 <div class="deco-line mb-6" aria-hidden="true"></div>
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-child text-brand-orange"></i> Pour qui ?</h2>
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-28 h-28 bg-gray-50 rounded-bl-full -mr-7 -mt-7" aria-hidden="true"></div>
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-28 h-28 bg-orange-50 rounded-bl-full -mr-7 -mt-7" aria-hidden="true"></div>
                     <p class="text-gray-600 mb-4">Ces cours s'adressent aux <strong><span class="fluo">enfants à partir de 4 ans</span></strong> qui souhaitent découvrir ou approfondir l'arabe, que ce soit pour un lien familial, culturel ou scolaire. Nous accueillons les débutants comme les enfants ayant déjà des bases.</p>
 <ul class="space-y-2 text-gray-600">
                     <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">À partir de 4 ans</span></li>
@@ -118,11 +129,13 @@
             </section>
 
             <section class="max-w-4xl mx-auto mb-16 relative z-10" data-scroll-reveal>
-                <div class="scroll-reveal scroll-reveal-right">
+                <div class="scroll-reveal scroll-reveal-right relative">
+                <span class="card-deco -right-4 top-20 md:top-24" aria-hidden="true"></span>
+                <span class="card-deco-big -left-2 top-1/4 hidden md:block" aria-hidden="true"></span>
                 <div class="deco-line-right mb-6" aria-hidden="true"></div>
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-book-open text-brand-orange"></i> Notre approche</h2>
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50/50 rounded-bl-full -mr-8 -mt-8" aria-hidden="true"></div>
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -mr-8 -mt-8" aria-hidden="true"></div>
                     <p class="text-gray-600 mb-4">Nous privilégions une <strong><span class="fluo">pédagogie ludique et bienveillante</span></strong> : chansons, jeux, histoires et activités manuelles pour ancrer la langue <span class="fluo">sans pression</span>. L'arabe littéraire est enseigné de manière progressive (alphabet, lecture, compréhension, expression).</p>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start gap-2"><i class="fas fa-check text-brand-orange mt-1"></i><span class="fluo">Découverte de l'alphabet et de la prononciation</span></li>
@@ -134,11 +147,13 @@
             </section>
 
             <section class="max-w-4xl mx-auto mb-16 relative z-10" data-scroll-reveal>
-                <div class="scroll-reveal scroll-reveal-left">
+                <div class="scroll-reveal scroll-reveal-left relative">
+                <span class="card-deco -left-4 top-14 md:top-16" aria-hidden="true"></span>
+                <span class="card-deco-big -right-2 bottom-1/4 hidden md:block" aria-hidden="true"></span>
                 <div class="deco-line mb-6" aria-hidden="true"></div>
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-clock text-brand-orange"></i> Horaires disponibles</h2>
-                <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-lg relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -mr-6 -mt-6" aria-hidden="true"></div>
+                <div class="bg-brand-lightOrange rounded-2xl p-6 md:p-8 border-2 border-orange-100 shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-orange-100/60 rounded-bl-full -mr-6 -mt-6" aria-hidden="true"></div>
                     <p class="text-gray-700 mb-4">Les cours ont lieu à <strong>Molenbeek-Saint-Jean, Rue de Birmingham 56</strong>. Créneaux proposés :</p>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-brand-orange"></i><span>Mercredi : 14h – 18h</span></li>
@@ -153,11 +168,15 @@
 
             <div class="max-w-2xl mx-auto text-center pb-16 relative z-10" data-scroll-reveal>
                 <div class="flex justify-center gap-2 mb-6"><span class="deco-dot"></span><span class="deco-dot"></span><span class="deco-dot"></span></div>
+                <div class="relative">
+                    <span class="card-deco -left-2 top-8 md:top-12" aria-hidden="true"></span>
+                    <span class="card-deco -right-2 top-1/3" aria-hidden="true"></span>
                 <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-2 border-brand-orange scroll-reveal relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-28 h-28 bg-orange-50 rounded-bl-full -mr-8 -mt-8" aria-hidden="true"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-bl-full -mr-10 -mt-10" aria-hidden="true"></div>
                     <p class="text-gray-700 text-lg mb-6">Vous souhaitez inscrire votre enfant au cours d'arabe ?</p>
                     <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-orange text-white rounded-full font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition">Nous contacter / S'inscrire</a>
                     <p class="mt-4 text-sm text-gray-500"><a href="cours-langues.html" class="text-brand-orange hover:underline">Voir tous nos cours de langues</a></p>
+                </div>
                 </div>
             </div>
         </div>
