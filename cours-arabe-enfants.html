@@ -36,8 +36,7 @@
         .page-dynamism .deco-blob-3 { width: 200px; height: 200px; background: #fde68a; top: 50%; right: -50px; filter: blur(70px); opacity: 0.35; mix-blend-mode: multiply; }
         .page-dynamism .deco-blob-4 { width: 180px; height: 180px; background: #93c5fd; bottom: 40%; left: -40px; filter: blur(60px); opacity: 0.25; mix-blend-mode: multiply; }
         .deco-dot { width: 6px; height: 6px; border-radius: 50%; background: #fdba74; }
-        .card-deco { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #fed7aa; pointer-events: none; }
-        .card-deco-big { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(255, 140, 0, 0.2); pointer-events: none; }
+        .title-deco-line { height: 2px; width: 100%; max-width: 200px; margin: 0 auto 1rem; background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.4), transparent); border-radius: 1px; }
         @keyframes bounce-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .animate-bounce-soft { animation: bounce-soft 3s ease-in-out infinite; }
         .scroll-reveal { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -76,8 +75,13 @@
             </a>
             <div class="container mx-auto px-4 relative z-10">
                 <div class="text-center pt-4 md:pt-6 max-w-3xl mx-auto flex flex-col items-center relative">
+                    <span class="text-yellow-400 text-2xl opacity-90 animate-bounce-soft absolute -top-1 left-1/4 md:left-1/3" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <div class="title-deco-line" aria-hidden="true"></div>
                     <span class="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-bold uppercase rounded-full mb-4">Pour enfants</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center w-full">Cours d'arabe pour enfants</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center w-full relative">
+                        <span class="text-amber-300 text-xl opacity-80 animate-pulse absolute -right-2 top-1/2 hidden md:block" aria-hidden="true"><i class="fas fa-book-open"></i></span>
+                        Cours d'arabe pour enfants
+                    </h1>
                     <p class="text-gray-600 text-lg mb-6 text-center">Arabe littéraire : apprentissage ludique et bienveillant, à partir de 4 ans.</p>
                     <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-orange text-white rounded-full font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition">S'inscrire</a>
                 </div>
@@ -97,9 +101,7 @@
             </div>
 
             <section class="max-w-4xl mx-auto mb-16 relative z-10" data-scroll-reveal>
-                <div class="scroll-reveal relative">
-                <span class="card-deco -left-4 top-16 md:top-20" aria-hidden="true"></span>
-                <span class="card-deco-big -right-2 top-1/3 hidden md:block" aria-hidden="true"></span>
+                <div class="scroll-reveal">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-child text-brand-orange"></i> Pour qui ?</h2>
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-28 h-28 bg-orange-50 rounded-bl-full -mr-7 -mt-7" aria-hidden="true"></div>
@@ -114,9 +116,7 @@
             </section>
 
             <section class="max-w-4xl mx-auto mb-16 relative z-10" data-scroll-reveal>
-                <div class="scroll-reveal scroll-reveal-right relative">
-                <span class="card-deco -right-4 top-20 md:top-24" aria-hidden="true"></span>
-                <span class="card-deco-big -left-2 top-1/4 hidden md:block" aria-hidden="true"></span>
+                <div class="scroll-reveal scroll-reveal-right">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-book-open text-brand-orange"></i> Notre approche</h2>
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-orange-100 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -mr-8 -mt-8" aria-hidden="true"></div>
@@ -131,9 +131,7 @@
             </section>
 
             <section class="max-w-4xl mx-auto mb-16 relative z-10" data-scroll-reveal>
-                <div class="scroll-reveal scroll-reveal-left relative">
-                <span class="card-deco -left-4 top-14 md:top-16" aria-hidden="true"></span>
-                <span class="card-deco-big -right-2 bottom-1/4 hidden md:block" aria-hidden="true"></span>
+                <div class="scroll-reveal scroll-reveal-left">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3"><i class="fas fa-clock text-brand-orange"></i> Horaires disponibles</h2>
                 <div class="bg-brand-lightOrange rounded-2xl p-6 md:p-8 border-2 border-orange-100 shadow-lg relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-orange-100/60 rounded-bl-full -mr-6 -mt-6" aria-hidden="true"></div>
@@ -151,15 +149,11 @@
 
             <div class="max-w-2xl mx-auto text-center pb-16 relative z-10" data-scroll-reveal>
                 <div class="flex justify-center gap-2 mb-6"><span class="deco-dot"></span><span class="deco-dot"></span><span class="deco-dot"></span></div>
-                <div class="relative">
-                    <span class="card-deco -left-2 top-8 md:top-12" aria-hidden="true"></span>
-                    <span class="card-deco -right-2 top-1/3" aria-hidden="true"></span>
                 <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-2 border-brand-orange scroll-reveal relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-bl-full -mr-10 -mt-10" aria-hidden="true"></div>
                     <p class="text-gray-700 text-lg mb-6">Vous souhaitez inscrire votre enfant au cours d'arabe ?</p>
                     <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-orange text-white rounded-full font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition">Nous contacter / S'inscrire</a>
                     <p class="mt-4 text-sm text-gray-500"><a href="cours-langues.html" class="text-brand-orange hover:underline">Voir tous nos cours de langues</a></p>
-                </div>
                 </div>
             </div>
         </div>
