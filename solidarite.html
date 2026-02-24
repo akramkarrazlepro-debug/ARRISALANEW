@@ -9,6 +9,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .fluo { background: linear-gradient(180deg, transparent 55%, rgba(255, 193, 7, 0.45) 55%); padding: 0 2px; }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -47,12 +50,12 @@
     <!-- Contenu principal -->
     <main class="min-h-screen">
         <!-- Bandeau titre -->
-        <div class="bg-gray-900 text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="bg-gray-900 text-white py-10 md:py-16 relative overflow-hidden">
             <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center"></div>
             <a href="index.html" class="absolute top-2 left-4 md:top-3 md:left-6 z-20 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 hover:bg-white text-gray-800 hover:text-brand-orange text-sm font-medium transition shadow-md border border-gray-200/60">
                 <i class="fas fa-arrow-left"></i> Retour à l'accueil
             </a>
-            <div class="container mx-auto px-4 relative z-10 pt-12 md:pt-16 text-center">
+            <div class="container mx-auto px-4 relative z-10 pt-6 md:pt-10 text-center">
                 <span class="inline-block px-3 py-1 bg-red-600 rounded-full text-xs font-bold uppercase tracking-wide mb-4">Solidarité</span>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">Notre Engagement Humanitaire et Social</h1>
                 <p class="text-gray-300 text-lg max-w-2xl mx-auto text-center">L'ASBL ARRISALA mène des actions concrètes de soutien aux jeunes et familles en difficulté à Bruxelles.</p>
@@ -125,7 +128,7 @@
 
                 <!-- CTA -->
                 <div class="bg-brand-lightOrange rounded-3xl p-8 md:p-10 border-2 border-orange-100 text-center">
-                    <p class="text-gray-700 text-lg mb-6">Vous souhaitez nous rejoindre, nous soutenir ou en savoir plus sur nos actions ?</p>
+                    <p class="text-gray-700 text-lg mb-6"><span class="fluo">Vous souhaitez nous rejoindre, nous soutenir ou en savoir plus sur nos actions ?</span></p>
                     <a href="index.html#contact" class="inline-block px-8 py-4 bg-brand-orange text-white rounded-full font-bold shadow-lg shadow-orange-200 hover:bg-orange-600 transition">Nous contacter</a>
                 </div>
             </div>
